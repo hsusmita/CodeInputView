@@ -14,6 +14,7 @@
 		69AF22391B2059CC00A2C6DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF22381B2059CC00A2C6DA /* Images.xcassets */; };
 		69AF223C1B2059CC00A2C6DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69AF223A1B2059CC00A2C6DA /* LaunchScreen.xib */; };
 		69AF22481B2059CC00A2C6DA /* CodeInputViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF22471B2059CC00A2C6DA /* CodeInputViewTests.m */; };
+		69ED4EC21B205B7700E3B9ED /* FixedLengthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		69AF22411B2059CC00A2C6DA /* CodeInputViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeInputViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AF22461B2059CC00A2C6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AF22471B2059CC00A2C6DA /* CodeInputViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeInputViewTests.m; sourceTree = "<group>"; };
+		69ED4EC01B205B7700E3B9ED /* FixedLengthTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FixedLengthTextField.h; path = Source/FixedLengthTextField.h; sourceTree = "<group>"; };
+		69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FixedLengthTextField.m; path = Source/FixedLengthTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 		69AF222A1B2059CC00A2C6DA /* CodeInputView */ = {
 			isa = PBXGroup;
 			children = (
+				69ED4EBF1B205B3D00E3B9ED /* Source */,
 				69AF222F1B2059CC00A2C6DA /* AppDelegate.h */,
 				69AF22301B2059CC00A2C6DA /* AppDelegate.m */,
 				69AF22321B2059CC00A2C6DA /* ViewController.h */,
@@ -117,6 +121,15 @@
 				69AF22461B2059CC00A2C6DA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69ED4EBF1B205B3D00E3B9ED /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				69ED4EC01B205B7700E3B9ED /* FixedLengthTextField.h */,
+				69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69ED4EC21B205B7700E3B9ED /* FixedLengthTextField.m in Sources */,
 				69AF22341B2059CC00A2C6DA /* ViewController.m in Sources */,
 				69AF22311B2059CC00A2C6DA /* AppDelegate.m in Sources */,
 				69AF222E1B2059CC00A2C6DA /* main.m in Sources */,
@@ -416,6 +430,7 @@
 				69AF224D1B2059CC00A2C6DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69AF224E1B2059CC00A2C6DA /* Build configuration list for PBXNativeTarget "CodeInputViewTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +439,7 @@
 				69AF22501B2059CC00A2C6DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
