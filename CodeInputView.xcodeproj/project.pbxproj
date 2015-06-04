@@ -15,6 +15,8 @@
 		69AF223C1B2059CC00A2C6DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69AF223A1B2059CC00A2C6DA /* LaunchScreen.xib */; };
 		69AF22481B2059CC00A2C6DA /* CodeInputViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF22471B2059CC00A2C6DA /* CodeInputViewTests.m */; };
 		69ED4EC21B205B7700E3B9ED /* FixedLengthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */; };
+		69ED4EC51B205C5200E3B9ED /* CodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC41B205C5200E3B9ED /* CodeInputView.m */; };
+		69ED4EC81B205F9200E3B9ED /* CodeInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC71B205F9200E3B9ED /* CodeInputCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		69AF22471B2059CC00A2C6DA /* CodeInputViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeInputViewTests.m; sourceTree = "<group>"; };
 		69ED4EC01B205B7700E3B9ED /* FixedLengthTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FixedLengthTextField.h; path = Source/FixedLengthTextField.h; sourceTree = "<group>"; };
 		69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FixedLengthTextField.m; path = Source/FixedLengthTextField.m; sourceTree = "<group>"; };
+		69ED4EC31B205C5200E3B9ED /* CodeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeInputView.h; path = Source/CodeInputView.h; sourceTree = "<group>"; };
+		69ED4EC41B205C5200E3B9ED /* CodeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeInputView.m; path = Source/CodeInputView.m; sourceTree = "<group>"; };
+		69ED4EC61B205F9200E3B9ED /* CodeInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeInputCell.h; path = Source/CodeInputCell.h; sourceTree = "<group>"; };
+		69ED4EC71B205F9200E3B9ED /* CodeInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeInputCell.m; path = Source/CodeInputCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,10 @@
 			children = (
 				69ED4EC01B205B7700E3B9ED /* FixedLengthTextField.h */,
 				69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */,
+				69ED4EC31B205C5200E3B9ED /* CodeInputView.h */,
+				69ED4EC41B205C5200E3B9ED /* CodeInputView.m */,
+				69ED4EC61B205F9200E3B9ED /* CodeInputCell.h */,
+				69ED4EC71B205F9200E3B9ED /* CodeInputCell.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -232,8 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69ED4EC51B205C5200E3B9ED /* CodeInputView.m in Sources */,
 				69ED4EC21B205B7700E3B9ED /* FixedLengthTextField.m in Sources */,
 				69AF22341B2059CC00A2C6DA /* ViewController.m in Sources */,
+				69ED4EC81B205F9200E3B9ED /* CodeInputCell.m in Sources */,
 				69AF22311B2059CC00A2C6DA /* AppDelegate.m in Sources */,
 				69AF222E1B2059CC00A2C6DA /* main.m in Sources */,
 			);

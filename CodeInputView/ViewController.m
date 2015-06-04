@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "CodeInputView.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet CodeInputView *codeInputView;
 
 @end
 
@@ -16,6 +19,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.codeInputView.numberOfInputBox = 4;
   // Do any additional setup after loading the view, typically from a nib.
 }
 
