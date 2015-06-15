@@ -22,6 +22,7 @@
 - (void)didDeleteFromEmptyTextField:(FixedLengthTextField *)textField;
 - (void)didInsertToFullTextField:(FixedLengthTextField *)textField;
 - (void)textLimitReachedForTextField:(FixedLengthTextField *)textField;
+- (void)didTapReturnKey:(FixedLengthTextField *)textField;
 
 @end
 

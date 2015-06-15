@@ -21,7 +21,13 @@
 
 - (void)insertText:(NSString *)text {
   [super insertText:text];
-  [self truncateCharactersIfRequired];
+  if ([text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location != NSNotFound) {
+    if ([self.fixedLengthTextFieldDelegate respondsToSelector:@selector(didTapReturnKey:)]) {
+      [self.fixedLengthTextFieldDelegate didTapReturnKey:self];
+    }
+  }
+  self.text = [[self.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] componentsJoinedByString:@""];
+ [self truncateCharactersIfRequired];
 }
 
 - (void)paste:(id)sender {
