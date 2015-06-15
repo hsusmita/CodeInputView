@@ -10,6 +10,8 @@
 
 @interface CodeInputView : UIView
 
-@property (nonatomic,assign) NSInteger numberOfInputBox;
+- (void)configureWithBoxCount:(NSInteger)numberOfInputBox withBoxSize:(CGSize)boxSize;
+- (void)configureWithBoxCount:(NSInteger)numberOfInputBox withInset:(UIEdgeInsets)insets withInterBoxSpace:(CGFloat)space;
+- (void)registerNibWithName:(NSString *)nibName;
 
 @end

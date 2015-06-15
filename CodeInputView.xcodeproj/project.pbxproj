@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690AE8EA1B2EBAC000795A1F /* RoundedInputField.m in Sources */ = {isa = PBXBuildFile; fileRef = 690AE8E91B2EBAC000795A1F /* RoundedInputField.m */; };
+		690AE8EC1B2EBAD600795A1F /* RoundedInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690AE8EB1B2EBAD600795A1F /* RoundedInputField.xib */; };
 		69AF222E1B2059CC00A2C6DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF222D1B2059CC00A2C6DA /* main.m */; };
 		69AF22311B2059CC00A2C6DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF22301B2059CC00A2C6DA /* AppDelegate.m */; };
 		69AF22341B2059CC00A2C6DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF22331B2059CC00A2C6DA /* ViewController.m */; };
@@ -16,7 +18,6 @@
 		69AF22481B2059CC00A2C6DA /* CodeInputViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF22471B2059CC00A2C6DA /* CodeInputViewTests.m */; };
 		69ED4EC21B205B7700E3B9ED /* FixedLengthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */; };
 		69ED4EC51B205C5200E3B9ED /* CodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC41B205C5200E3B9ED /* CodeInputView.m */; };
-		69ED4EC81B205F9200E3B9ED /* CodeInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC71B205F9200E3B9ED /* CodeInputCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690AE8E81B2EBAC000795A1F /* RoundedInputField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundedInputField.h; path = Example/RoundedInputField.h; sourceTree = "<group>"; };
+		690AE8E91B2EBAC000795A1F /* RoundedInputField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundedInputField.m; path = Example/RoundedInputField.m; sourceTree = "<group>"; };
+		690AE8EB1B2EBAD600795A1F /* RoundedInputField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedInputField.xib; sourceTree = "<group>"; };
 		69AF22281B2059CC00A2C6DA /* CodeInputView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeInputView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AF222C1B2059CC00A2C6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AF222D1B2059CC00A2C6DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,8 +51,6 @@
 		69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FixedLengthTextField.m; path = Source/FixedLengthTextField.m; sourceTree = "<group>"; };
 		69ED4EC31B205C5200E3B9ED /* CodeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeInputView.h; path = Source/CodeInputView.h; sourceTree = "<group>"; };
 		69ED4EC41B205C5200E3B9ED /* CodeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeInputView.m; path = Source/CodeInputView.m; sourceTree = "<group>"; };
-		69ED4EC61B205F9200E3B9ED /* CodeInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeInputCell.h; path = Source/CodeInputCell.h; sourceTree = "<group>"; };
-		69ED4EC71B205F9200E3B9ED /* CodeInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeInputCell.m; path = Source/CodeInputCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		690AE8E71B2EBA8400795A1F /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				69AF222F1B2059CC00A2C6DA /* AppDelegate.h */,
+				69AF22301B2059CC00A2C6DA /* AppDelegate.m */,
+				69AF22321B2059CC00A2C6DA /* ViewController.h */,
+				69AF22331B2059CC00A2C6DA /* ViewController.m */,
+				69AF22351B2059CC00A2C6DA /* Main.storyboard */,
+				690AE8E81B2EBAC000795A1F /* RoundedInputField.h */,
+				690AE8E91B2EBAC000795A1F /* RoundedInputField.m */,
+				690AE8EB1B2EBAD600795A1F /* RoundedInputField.xib */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
 		69AF221F1B2059CC00A2C6DA = {
 			isa = PBXGroup;
 			children = (
@@ -90,12 +107,8 @@
 		69AF222A1B2059CC00A2C6DA /* CodeInputView */ = {
 			isa = PBXGroup;
 			children = (
+				690AE8E71B2EBA8400795A1F /* Example */,
 				69ED4EBF1B205B3D00E3B9ED /* Source */,
-				69AF222F1B2059CC00A2C6DA /* AppDelegate.h */,
-				69AF22301B2059CC00A2C6DA /* AppDelegate.m */,
-				69AF22321B2059CC00A2C6DA /* ViewController.h */,
-				69AF22331B2059CC00A2C6DA /* ViewController.m */,
-				69AF22351B2059CC00A2C6DA /* Main.storyboard */,
 				69AF22381B2059CC00A2C6DA /* Images.xcassets */,
 				69AF223A1B2059CC00A2C6DA /* LaunchScreen.xib */,
 				69AF222B1B2059CC00A2C6DA /* Supporting Files */,
@@ -136,8 +149,6 @@
 				69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */,
 				69ED4EC31B205C5200E3B9ED /* CodeInputView.h */,
 				69ED4EC41B205C5200E3B9ED /* CodeInputView.m */,
-				69ED4EC61B205F9200E3B9ED /* CodeInputCell.h */,
-				69ED4EC71B205F9200E3B9ED /* CodeInputCell.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -225,6 +236,7 @@
 				69AF22371B2059CC00A2C6DA /* Main.storyboard in Resources */,
 				69AF223C1B2059CC00A2C6DA /* LaunchScreen.xib in Resources */,
 				69AF22391B2059CC00A2C6DA /* Images.xcassets in Resources */,
+				690AE8EC1B2EBAD600795A1F /* RoundedInputField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,9 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				69ED4EC51B205C5200E3B9ED /* CodeInputView.m in Sources */,
+				690AE8EA1B2EBAC000795A1F /* RoundedInputField.m in Sources */,
 				69ED4EC21B205B7700E3B9ED /* FixedLengthTextField.m in Sources */,
 				69AF22341B2059CC00A2C6DA /* ViewController.m in Sources */,
-				69ED4EC81B205F9200E3B9ED /* CodeInputCell.m in Sources */,
 				69AF22311B2059CC00A2C6DA /* AppDelegate.m in Sources */,
 				69AF222E1B2059CC00A2C6DA /* main.m in Sources */,
 			);

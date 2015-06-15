@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CodeInputView.h"
+#import "RoundedInputField.h"
 
 @interface ViewController ()
 
@@ -19,8 +20,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.codeInputView.numberOfInputBox = 4;
-  // Do any additional setup after loading the view, typically from a nib.
+  [self.codeInputView registerNibWithName:NSStringFromClass([RoundedInputField class])];
+  [self.codeInputView configureWithBoxCount:5 withBoxSize:CGSizeMake(60, 60)];
+//  [self.codeInputView configureWithBoxCount:4 withInset:UIEdgeInsetsMake(10, 10, 10, 10) withInterBoxSpace:10];
 }
 
 - (void)didReceiveMemoryWarning {
