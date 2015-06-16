@@ -10,9 +10,10 @@
 
 @protocol FixedLengthTextFieldDelegate;
 
+IB_DESIGNABLE
 @interface FixedLengthTextField : UITextField  <UIKeyInput>
 
-@property (nonatomic,assign) NSInteger maximumCharacterLimit;
+@property (nonatomic,assign) IBInspectable NSInteger maximumCharacterLimit;
 @property (nonatomic,weak) id<FixedLengthTextFieldDelegate> fixedLengthTextFieldDelegate;
 
 @end

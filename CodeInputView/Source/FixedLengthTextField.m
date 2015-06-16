@@ -8,19 +8,27 @@
 
 #import "FixedLengthTextField.h"
 
+@interface FixedLengthTextField()
+
+@property (nonatomic, assign) BOOL isEmpty;
+
+@end
+
 @implementation FixedLengthTextField
 
 - (void)deleteBackward {
   [super deleteBackward];
   if (self.text.length == 0) {
-    if ([self.fixedLengthTextFieldDelegate respondsToSelector:@selector(didDeleteFromEmptyTextField:)]) {
+    if (self.isEmpty && [self.fixedLengthTextFieldDelegate respondsToSelector:@selector(didDeleteFromEmptyTextField:)]) {
       [self.fixedLengthTextFieldDelegate didDeleteFromEmptyTextField:self];
     }
+    self.isEmpty = YES;
   }
 }
 
 - (void)insertText:(NSString *)text {
   [super insertText:text];
+  self.isEmpty = (self.text.length == 0);
   if ([text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location != NSNotFound) {
     if ([self.fixedLengthTextFieldDelegate respondsToSelector:@selector(didTapReturnKey:)]) {
       [self.fixedLengthTextFieldDelegate didTapReturnKey:self];
@@ -32,6 +40,7 @@
 
 - (void)paste:(id)sender {
   [super paste:sender];
+  self.isEmpty = (self.text.length == 0);
   [self truncateCharactersIfRequired];
 }
 
@@ -48,6 +57,5 @@
     }
   }
 }
-
 
 @end
