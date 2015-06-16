@@ -11,7 +11,6 @@
 
 @interface SHCodeInputDelegateManager()<SHFixedLengthTextFieldDelegate>
 
-@property (nonatomic,strong) NSArray *listOfTextFields;
 
 @end
 

@@ -10,6 +10,8 @@
 
 @interface SHCodeInputDelegateManager : NSObject
 
+@property (nonatomic,strong) NSArray *listOfTextFields;
+
 - (id)initWithTextFields:(NSArray *)textFields;
 
 @end

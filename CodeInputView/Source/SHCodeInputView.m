@@ -13,6 +13,7 @@
 @interface SHCodeInputView()
 
 @property (nonatomic, assign) NSInteger numberOfInputBox;
+@property (nonatomic, assign) NSInteger characterLimit;
 @property (nonatomic, strong) NSString *nibNameForTextField;
 @property (nonatomic, assign) CGSize boxSize;
 @property (nonatomic, assign) UIEdgeInsets insets;
@@ -23,6 +24,61 @@
 
 @implementation SHCodeInputView
 
+#pragma mark - Public methods
+
+- (void)registerNibWithName:(NSString *)nibName {
+  self.nibNameForTextField = nibName;
+}
+
+- (void)configureWithBoxCount:(NSInteger)numberOfInputBox
+           withCharacterLimit:(NSInteger)limit
+                  withBoxSize:(CGSize)boxSize {
+  [self layoutIfNeeded];
+  self.numberOfInputBox = numberOfInputBox;
+  self.boxSize = boxSize;
+  self.characterLimit = limit;
+
+  NSMutableArray *arrayOfTextFields = [NSMutableArray new];
+  for (int i = 0 ; i < self.numberOfInputBox ; i++) {
+    SHFixedLengthTextField *textField = [self createTextField];
+    [self addSubview:textField];
+    [arrayOfTextFields addObject:textField];
+  }
+  
+  self.codeInputManager = [[SHCodeInputDelegateManager alloc]initWithTextFields:arrayOfTextFields];
+}
+
+- (void)configureWithBoxCount:(NSInteger)numberOfInputBox
+           withCharacterLimit:(NSInteger)limit
+                    withInset:(UIEdgeInsets)insets
+            withInterBoxSpace:(CGFloat)space {
+  [self layoutIfNeeded];
+  self.numberOfInputBox = numberOfInputBox;
+  self.insets = insets;
+  self.interBoxSpace = space;
+  self.characterLimit = limit;
+
+  NSMutableArray *arrayOfTextFields = [NSMutableArray new];
+  for (int i = 0 ; i < self.numberOfInputBox ; i++) {
+    SHFixedLengthTextField *textField = [self createTextField];
+    [self addSubview:textField];
+    [arrayOfTextFields addObject:textField];
+  }
+  
+  self.codeInputManager = [[SHCodeInputDelegateManager alloc]initWithTextFields:arrayOfTextFields];
+}
+
+- (NSString *)codeString {
+  __block NSString *finalString = @"";
+  [self.codeInputManager.listOfTextFields enumerateObjectsUsingBlock:^(SHFixedLengthTextField *textField, NSUInteger idx, BOOL *stop) {
+    finalString = [finalString stringByAppendingString:textField.text];
+  }];
+  
+  return finalString;
+}
+
+#pragma mark - Override superclass methods
+
 - (void)layoutSubviews {
   [super layoutSubviews];
   if (!CGSizeEqualToSize(self.boxSize, CGSizeZero)) {
@@ -32,35 +88,24 @@
   }
 }
 
-- (void)registerNibWithName:(NSString *)nibName {
-  self.nibNameForTextField = nibName;
-}
+#pragma mark - Private methods
 
-- (void)configureWithBoxCount:(NSInteger)numberOfInputBox withBoxSize:(CGSize)boxSize {
-  [self layoutIfNeeded];
-  self.numberOfInputBox = numberOfInputBox;
-  self.boxSize = boxSize;
-  NSMutableArray *arrayOfTextFields = [NSMutableArray new];
-  for (int i = 0 ; i < self.numberOfInputBox ; i++) {
-    SHFixedLengthTextField *textField = [self createTextField];
-    [self addSubview:textField];
-    [arrayOfTextFields addObject:textField];
+- (SHFixedLengthTextField *)createTextField {
+  SHFixedLengthTextField *textfield;
+  if (self.nibNameForTextField.length == 0) {
+    textfield = [[SHFixedLengthTextField alloc]init];
+    textfield.backgroundColor = [UIColor grayColor];
+  }else {
+    NSArray *array = [[NSBundle mainBundle]loadNibNamed:self.nibNameForTextField owner:self options:nil];
+    if ([array.firstObject isKindOfClass:[SHFixedLengthTextField class]]) {
+      textfield = (SHFixedLengthTextField *) (array.firstObject);
+    }else {
+      NSAssert(@"No subclass of FixedLengthTextField found", @"");
+    }
   }
-  self.codeInputManager = [[SHCodeInputDelegateManager alloc]initWithTextFields:arrayOfTextFields];
-}
-
-- (void)configureWithBoxCount:(NSInteger)numberOfInputBox withInset:(UIEdgeInsets)insets withInterBoxSpace:(CGFloat)space {
-  [self layoutIfNeeded];
-  self.numberOfInputBox = numberOfInputBox;
-  self.insets = insets;
-  self.interBoxSpace = space;
-  NSMutableArray *arrayOfTextFields = [NSMutableArray new];
-  for (int i = 0 ; i < self.numberOfInputBox ; i++) {
-    SHFixedLengthTextField *textField = [self createTextField];
-    [self addSubview:textField];
-    [arrayOfTextFields addObject:textField];
-  }
-  self.codeInputManager = [[SHCodeInputDelegateManager alloc]initWithTextFields:arrayOfTextFields];
+  [self addSubview:textfield];
+  textfield.maximumCharacterLimit = self.characterLimit;
+  return textfield;
 }
 
 - (void)updateTextFieldFrameForBoxSize:(CGSize)boxSize {
@@ -82,24 +127,6 @@
       view.frame = CGRectMake(idx * (width+space) + insets.left, insets.top, width, height);
     }
   }];
-}
-
-- (SHFixedLengthTextField *)createTextField {
-  SHFixedLengthTextField *textfield;
-  if (self.nibNameForTextField.length == 0) {
-    textfield = [[SHFixedLengthTextField alloc]init];
-    textfield.backgroundColor = [UIColor grayColor];
-  }else {
-    NSArray *array = [[NSBundle mainBundle]loadNibNamed:self.nibNameForTextField owner:self options:nil];
-    if ([array.firstObject isKindOfClass:[SHFixedLengthTextField class]]) {
-      textfield = (SHFixedLengthTextField *) (array.firstObject);
-    }else {
-      NSAssert(@"No subclass of FixedLengthTextField found", @"");
-    }
-  }
-  [self addSubview:textfield];
-  textfield.maximumCharacterLimit = 1;
-  return textfield;
 }
 
 @end

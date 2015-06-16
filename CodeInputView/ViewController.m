@@ -31,8 +31,8 @@
   [super viewDidLoad];
 // self.codeInputManager = [[CodeInputManager alloc]initWithTextFields:@[self.firstField,self.secondField,self.thirdField,self.fourthField]];
   [self.codeInputView registerNibWithName:NSStringFromClass([RoundedInputField class])];
-//  [self.codeInputView configureWithBoxCount:5 withBoxSize:CGSizeMake(60, 60)];
-  [self.codeInputView configureWithBoxCount:5 withInset:UIEdgeInsetsMake(10, 10, 10, 10) withInterBoxSpace:20];
+//  [self.codeInputView configureWithBoxCount:5 withCharacterLimit:2 withBoxSize:CGSizeMake(60, 60)];
+  [self.codeInputView configureWithBoxCount:5 withCharacterLimit:2 withInset:UIEdgeInsetsMake(10, 10, 10, 10) withInterBoxSpace:20];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +40,7 @@
   // Dispose of any resources that can be recreated.
 }
 - (IBAction)updateHeight:(id)sender {
+  NSLog(@"The code is = %@",self.codeInputView.codeString);
   
 }
 - (IBAction)adjustConstraint:(UIStepper*)stepper {
@@ -47,6 +48,4 @@
   
 }
 
-- (IBAction)thirdField:(id)sender {
-}
 @end

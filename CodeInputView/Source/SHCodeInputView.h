@@ -10,8 +10,14 @@
 
 @interface SHCodeInputView : UIView
 
-- (void)configureWithBoxCount:(NSInteger)numberOfInputBox withBoxSize:(CGSize)boxSize;
-- (void)configureWithBoxCount:(NSInteger)numberOfInputBox withInset:(UIEdgeInsets)insets withInterBoxSpace:(CGFloat)space;
+- (void)configureWithBoxCount:(NSInteger)numberOfInputBox
+           withCharacterLimit:(NSInteger)limit
+                  withBoxSize:(CGSize)boxSize;
+- (void)configureWithBoxCount:(NSInteger)numberOfInputBox
+           withCharacterLimit:(NSInteger)limit
+                    withInset:(UIEdgeInsets)insets
+            withInterBoxSpace:(CGFloat)space;
 - (void)registerNibWithName:(NSString *)nibName;
+- (NSString *)codeString;
 
 @end
