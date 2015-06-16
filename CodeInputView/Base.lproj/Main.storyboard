@@ -17,12 +17,27 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5o7-ex-FUg" customClass="CodeInputView">
-                                <rect key="frame" x="0.0" y="190" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="210" width="600" height="80"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Gfu-jp-NjS"/>
+                                    <constraint firstAttribute="height" constant="80" id="Gfu-jp-NjS"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-yk-3TJ">
+                                <rect key="frame" x="289" y="45" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateHeight:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Sae-N0-7Rz"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="80" minimumValue="80" maximumValue="250" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="A8o-Ce-t0W">
+                                <rect key="frame" x="265" y="76" width="94" height="29"/>
+                                <connections>
+                                    <action selector="adjustConstraint:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ehY-7z-f2u"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -34,6 +49,7 @@
                     </view>
                     <connections>
                         <outlet property="codeInputView" destination="5o7-ex-FUg" id="ZTK-Bl-X9P"/>
+                        <outlet property="heightConstraint" destination="Gfu-jp-NjS" id="xGQ-gt-lb4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
