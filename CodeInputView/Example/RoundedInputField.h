@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 hsusmita.com. All rights reserved.
 //
 
-#import "FixedLengthTextField.h"
+#import "SHFixedLengthTextField.h"
 
-@interface RoundedInputField : FixedLengthTextField
+@interface RoundedInputField : SHFixedLengthTextField
 
 @end

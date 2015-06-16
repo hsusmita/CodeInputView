@@ -6,22 +6,22 @@
 //  Copyright (c) 2015 hsusmita.com. All rights reserved.
 //
 
-#import "CodeInputDelegateManager.h"
-#import "FixedLengthTextField.h"
+#import "SHCodeInputDelegateManager.h"
+#import "SHFixedLengthTextField.h"
 
-@interface CodeInputDelegateManager()<FixedLengthTextFieldDelegate>
+@interface SHCodeInputDelegateManager()<SHFixedLengthTextFieldDelegate>
 
 @property (nonatomic,strong) NSArray *listOfTextFields;
 
 @end
 
-@implementation CodeInputDelegateManager
+@implementation SHCodeInputDelegateManager
 
 - (id)initWithTextFields:(NSArray *)textFields {
   self = [super init];
   if (self) {
     _listOfTextFields = [NSArray arrayWithArray:textFields];
-    [self.listOfTextFields enumerateObjectsUsingBlock:^(FixedLengthTextField *textField, NSUInteger idx, BOOL *stop) {
+    [self.listOfTextFields enumerateObjectsUsingBlock:^(SHFixedLengthTextField *textField, NSUInteger idx, BOOL *stop) {
       textField.fixedLengthTextFieldDelegate = self;
     }];
   }
@@ -29,23 +29,23 @@
   return self;
 }
 
-- (void)didDeleteFromEmptyTextField:(FixedLengthTextField *)textField {
+- (void)didDeleteFromEmptyTextField:(SHFixedLengthTextField *)textField {
   NSInteger currentIndex = [self.listOfTextFields indexOfObject:textField];
   if (currentIndex > 0) {
-    FixedLengthTextField *previousTextField = [self.listOfTextFields objectAtIndex:currentIndex - 1];
+    SHFixedLengthTextField *previousTextField = [self.listOfTextFields objectAtIndex:currentIndex - 1];
     [previousTextField becomeFirstResponder];
   }
 }
 
-- (void)didInsertToFullTextField:(FixedLengthTextField *)textField {
+- (void)didInsertToFullTextField:(SHFixedLengthTextField *)textField {
   [self moveNextOfTextField:textField];
 }
 
-- (void)didTapReturnKey:(FixedLengthTextField *)textField {
+- (void)didTapReturnKey:(SHFixedLengthTextField *)textField {
   [self moveNextOfTextField:textField];
 }
 
-- (void)textLimitReachedForTextField:(FixedLengthTextField *)textField {
+- (void)textLimitReachedForTextField:(SHFixedLengthTextField *)textField {
   [self moveNextOfTextField:textField];
 }
 
@@ -57,7 +57,7 @@
     currentIndex ++;
   }
   if (currentIndex < self.listOfTextFields.count) {
-    FixedLengthTextField *nextTextField = [self.listOfTextFields objectAtIndex:currentIndex];
+    SHFixedLengthTextField *nextTextField = [self.listOfTextFields objectAtIndex:currentIndex];
     [nextTextField becomeFirstResponder];
   }
 }

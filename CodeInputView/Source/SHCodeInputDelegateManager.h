@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CodeInputDelegateManager : NSObject
+@interface SHCodeInputDelegateManager : NSObject
 
 - (id)initWithTextFields:(NSArray *)textFields;
 

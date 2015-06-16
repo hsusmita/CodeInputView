@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 hsusmita.com. All rights reserved.
 //
 
-#import "FixedLengthTextField.h"
+#import "SHFixedLengthTextField.h"
 
-@interface FixedLengthTextField()
+@interface SHFixedLengthTextField()
 
 @property (nonatomic, assign) BOOL isEmpty;
 
 @end
 
-@implementation FixedLengthTextField
+@implementation SHFixedLengthTextField
 
 - (void)deleteBackward {
   [super deleteBackward];

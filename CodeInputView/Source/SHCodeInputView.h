@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CodeInputView : UIView
+@interface SHCodeInputView : UIView
 
 - (void)configureWithBoxCount:(NSInteger)numberOfInputBox withBoxSize:(CGSize)boxSize;
 - (void)configureWithBoxCount:(NSInteger)numberOfInputBox withInset:(UIEdgeInsets)insets withInterBoxSpace:(CGFloat)space;

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		690AE8EA1B2EBAC000795A1F /* RoundedInputField.m in Sources */ = {isa = PBXBuildFile; fileRef = 690AE8E91B2EBAC000795A1F /* RoundedInputField.m */; };
 		690AE8EC1B2EBAD600795A1F /* RoundedInputField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690AE8EB1B2EBAD600795A1F /* RoundedInputField.xib */; };
-		6970A6931B30103C00C40114 /* CodeInputDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970A6921B30103C00C40114 /* CodeInputDelegateManager.m */; };
+		6970A6931B30103C00C40114 /* SHCodeInputDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6970A6921B30103C00C40114 /* SHCodeInputDelegateManager.m */; };
 		69AF222E1B2059CC00A2C6DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF222D1B2059CC00A2C6DA /* main.m */; };
 		69AF22311B2059CC00A2C6DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF22301B2059CC00A2C6DA /* AppDelegate.m */; };
 		69AF22341B2059CC00A2C6DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF22331B2059CC00A2C6DA /* ViewController.m */; };
@@ -17,8 +17,8 @@
 		69AF22391B2059CC00A2C6DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF22381B2059CC00A2C6DA /* Images.xcassets */; };
 		69AF223C1B2059CC00A2C6DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69AF223A1B2059CC00A2C6DA /* LaunchScreen.xib */; };
 		69AF22481B2059CC00A2C6DA /* CodeInputViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AF22471B2059CC00A2C6DA /* CodeInputViewTests.m */; };
-		69ED4EC21B205B7700E3B9ED /* FixedLengthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */; };
-		69ED4EC51B205C5200E3B9ED /* CodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC41B205C5200E3B9ED /* CodeInputView.m */; };
+		69ED4EC21B205B7700E3B9ED /* SHFixedLengthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC11B205B7700E3B9ED /* SHFixedLengthTextField.m */; };
+		69ED4EC51B205C5200E3B9ED /* SHCodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ED4EC41B205C5200E3B9ED /* SHCodeInputView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +35,8 @@
 		690AE8E81B2EBAC000795A1F /* RoundedInputField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoundedInputField.h; path = Example/RoundedInputField.h; sourceTree = "<group>"; };
 		690AE8E91B2EBAC000795A1F /* RoundedInputField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoundedInputField.m; path = Example/RoundedInputField.m; sourceTree = "<group>"; };
 		690AE8EB1B2EBAD600795A1F /* RoundedInputField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoundedInputField.xib; sourceTree = "<group>"; };
-		6970A6911B30103C00C40114 /* CodeInputDelegateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeInputDelegateManager.h; path = Source/CodeInputDelegateManager.h; sourceTree = "<group>"; };
-		6970A6921B30103C00C40114 /* CodeInputDelegateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeInputDelegateManager.m; path = Source/CodeInputDelegateManager.m; sourceTree = "<group>"; };
+		6970A6911B30103C00C40114 /* SHCodeInputDelegateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCodeInputDelegateManager.h; path = Source/SHCodeInputDelegateManager.h; sourceTree = "<group>"; };
+		6970A6921B30103C00C40114 /* SHCodeInputDelegateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCodeInputDelegateManager.m; path = Source/SHCodeInputDelegateManager.m; sourceTree = "<group>"; };
 		69AF22281B2059CC00A2C6DA /* CodeInputView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeInputView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AF222C1B2059CC00A2C6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AF222D1B2059CC00A2C6DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,10 +50,10 @@
 		69AF22411B2059CC00A2C6DA /* CodeInputViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeInputViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AF22461B2059CC00A2C6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AF22471B2059CC00A2C6DA /* CodeInputViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeInputViewTests.m; sourceTree = "<group>"; };
-		69ED4EC01B205B7700E3B9ED /* FixedLengthTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FixedLengthTextField.h; path = Source/FixedLengthTextField.h; sourceTree = "<group>"; };
-		69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FixedLengthTextField.m; path = Source/FixedLengthTextField.m; sourceTree = "<group>"; };
-		69ED4EC31B205C5200E3B9ED /* CodeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeInputView.h; path = Source/CodeInputView.h; sourceTree = "<group>"; };
-		69ED4EC41B205C5200E3B9ED /* CodeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeInputView.m; path = Source/CodeInputView.m; sourceTree = "<group>"; };
+		69ED4EC01B205B7700E3B9ED /* SHFixedLengthTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHFixedLengthTextField.h; path = Source/SHFixedLengthTextField.h; sourceTree = "<group>"; };
+		69ED4EC11B205B7700E3B9ED /* SHFixedLengthTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHFixedLengthTextField.m; path = Source/SHFixedLengthTextField.m; sourceTree = "<group>"; };
+		69ED4EC31B205C5200E3B9ED /* SHCodeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHCodeInputView.h; path = Source/SHCodeInputView.h; sourceTree = "<group>"; };
+		69ED4EC41B205C5200E3B9ED /* SHCodeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHCodeInputView.m; path = Source/SHCodeInputView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,12 +148,12 @@
 		69ED4EBF1B205B3D00E3B9ED /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				69ED4EC01B205B7700E3B9ED /* FixedLengthTextField.h */,
-				69ED4EC11B205B7700E3B9ED /* FixedLengthTextField.m */,
-				69ED4EC31B205C5200E3B9ED /* CodeInputView.h */,
-				69ED4EC41B205C5200E3B9ED /* CodeInputView.m */,
-				6970A6911B30103C00C40114 /* CodeInputDelegateManager.h */,
-				6970A6921B30103C00C40114 /* CodeInputDelegateManager.m */,
+				69ED4EC01B205B7700E3B9ED /* SHFixedLengthTextField.h */,
+				69ED4EC11B205B7700E3B9ED /* SHFixedLengthTextField.m */,
+				69ED4EC31B205C5200E3B9ED /* SHCodeInputView.h */,
+				69ED4EC41B205C5200E3B9ED /* SHCodeInputView.m */,
+				6970A6911B30103C00C40114 /* SHCodeInputDelegateManager.h */,
+				6970A6921B30103C00C40114 /* SHCodeInputDelegateManager.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -259,11 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69ED4EC51B205C5200E3B9ED /* CodeInputView.m in Sources */,
+				69ED4EC51B205C5200E3B9ED /* SHCodeInputView.m in Sources */,
 				690AE8EA1B2EBAC000795A1F /* RoundedInputField.m in Sources */,
-				69ED4EC21B205B7700E3B9ED /* FixedLengthTextField.m in Sources */,
+				69ED4EC21B205B7700E3B9ED /* SHFixedLengthTextField.m in Sources */,
 				69AF22341B2059CC00A2C6DA /* ViewController.m in Sources */,
-				6970A6931B30103C00C40114 /* CodeInputDelegateManager.m in Sources */,
+				6970A6931B30103C00C40114 /* SHCodeInputDelegateManager.m in Sources */,
 				69AF22311B2059CC00A2C6DA /* AppDelegate.m in Sources */,
 				69AF222E1B2059CC00A2C6DA /* main.m in Sources */,
 			);

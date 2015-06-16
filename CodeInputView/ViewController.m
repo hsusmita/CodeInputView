@@ -7,20 +7,20 @@
 //
 
 #import "ViewController.h"
-#import "CodeInputView.h"
+#import "SHCodeInputView.h"
 #import "RoundedInputField.h"
-#import "CodeInputDelegateManager.h"
-#import "FixedLengthTextField.h"
+#import "SHCodeInputDelegateManager.h"
+#import "SHFixedLengthTextField.h"
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet CodeInputView *codeInputView;
+@property (weak, nonatomic) IBOutlet SHCodeInputView *codeInputView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
-@property (weak, nonatomic) IBOutlet FixedLengthTextField *firstField;
-@property (weak, nonatomic) IBOutlet FixedLengthTextField *secondField;
-@property (weak, nonatomic) IBOutlet FixedLengthTextField *thirdField;
-@property (weak, nonatomic) IBOutlet FixedLengthTextField *fourthField;
-@property (strong, nonatomic) CodeInputDelegateManager *codeInputManager;
+@property (weak, nonatomic) IBOutlet SHFixedLengthTextField *firstField;
+@property (weak, nonatomic) IBOutlet SHFixedLengthTextField *secondField;
+@property (weak, nonatomic) IBOutlet SHFixedLengthTextField *thirdField;
+@property (weak, nonatomic) IBOutlet SHFixedLengthTextField *fourthField;
+@property (strong, nonatomic) SHCodeInputDelegateManager *codeInputManager;
 
 
 @end
