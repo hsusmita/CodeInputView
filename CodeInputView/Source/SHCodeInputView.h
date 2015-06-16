@@ -19,5 +19,6 @@
             withInterBoxSpace:(CGFloat)space;
 - (void)registerNibWithName:(NSString *)nibName;
 - (NSString *)codeString;
+- (NSArray *)arrayOfTextFields;
 
 @end

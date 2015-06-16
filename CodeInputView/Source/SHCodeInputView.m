@@ -77,6 +77,10 @@
   return finalString;
 }
 
+- (NSArray *)arrayOfTextFields {
+  return self.codeInputManager.listOfTextFields;
+}
+
 #pragma mark - Override superclass methods
 
 - (void)layoutSubviews {

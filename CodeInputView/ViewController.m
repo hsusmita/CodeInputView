@@ -41,7 +41,12 @@
 }
 - (IBAction)updateHeight:(id)sender {
   NSLog(@"The code is = %@",self.codeInputView.codeString);
-  
+  __block NSString *formattedCode = @"";
+  [self.codeInputView.arrayOfTextFields enumerateObjectsUsingBlock:^(SHFixedLengthTextField *textfield, NSUInteger idx, BOOL *stop) {
+    NSString *formattingString =  (idx == 4) ? [NSString stringWithFormat:@"%@",textfield.text] : [NSString stringWithFormat:@"%@-",textfield.text];
+    formattedCode = [NSString stringWithFormat:@"%@%@",formattedCode,formattingString];
+  }];
+  NSLog(@"formatted code = %@",formattedCode);
 }
 - (IBAction)adjustConstraint:(UIStepper*)stepper {
   self.heightConstraint.constant = stepper.value;
