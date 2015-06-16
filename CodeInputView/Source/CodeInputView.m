@@ -8,14 +8,16 @@
 
 #import "CodeInputView.h"
 #import "FixedLengthTextField.h"
+#import "CodeInputDelegateManager.h"
 
-@interface CodeInputView() <FixedLengthTextFieldDelegate,UITextFieldDelegate>
+@interface CodeInputView()
 
 @property (nonatomic, assign) NSInteger numberOfInputBox;
 @property (nonatomic, strong) NSString *nibNameForTextField;
 @property (nonatomic, assign) CGSize boxSize;
 @property (nonatomic, assign) UIEdgeInsets insets;
 @property (nonatomic, assign) CGFloat interBoxSpace;
+@property (nonatomic, strong) CodeInputDelegateManager *codeInputManager;
 
 @end
 
@@ -38,9 +40,13 @@
   [self layoutIfNeeded];
   self.numberOfInputBox = numberOfInputBox;
   self.boxSize = boxSize;
+  NSMutableArray *arrayOfTextFields = [NSMutableArray new];
   for (int i = 0 ; i < self.numberOfInputBox ; i++) {
-    [self addTextFieldWithTag:i+1];
+    FixedLengthTextField *textField = [self createTextField];
+    [self addSubview:textField];
+    [arrayOfTextFields addObject:textField];
   }
+  self.codeInputManager = [[CodeInputDelegateManager alloc]initWithTextFields:arrayOfTextFields];
 }
 
 - (void)configureWithBoxCount:(NSInteger)numberOfInputBox withInset:(UIEdgeInsets)insets withInterBoxSpace:(CGFloat)space {
@@ -48,9 +54,13 @@
   self.numberOfInputBox = numberOfInputBox;
   self.insets = insets;
   self.interBoxSpace = space;
+  NSMutableArray *arrayOfTextFields = [NSMutableArray new];
   for (int i = 0 ; i < self.numberOfInputBox ; i++) {
-    [self addTextFieldWithTag:i+1];
+    FixedLengthTextField *textField = [self createTextField];
+    [self addSubview:textField];
+    [arrayOfTextFields addObject:textField];
   }
+  self.codeInputManager = [[CodeInputDelegateManager alloc]initWithTextFields:arrayOfTextFields];
 }
 
 - (void)updateTextFieldFrameForBoxSize:(CGSize)boxSize {
@@ -74,7 +84,7 @@
   }];
 }
 
-- (void)addTextFieldWithTag:(NSInteger)tag {
+- (FixedLengthTextField *)createTextField {
   FixedLengthTextField *textfield;
   if (self.nibNameForTextField.length == 0) {
     textfield = [[FixedLengthTextField alloc]init];
@@ -88,38 +98,8 @@
     }
   }
   [self addSubview:textfield];
-  textfield.tag = tag;
   textfield.maximumCharacterLimit = 1;
-  textfield.fixedLengthTextFieldDelegate = self;
-}
-
-- (void)didDeleteFromEmptyTextField:(FixedLengthTextField *)textField {
-  NSInteger currentIndex = textField.tag;
-  FixedLengthTextField *previousTextField = (FixedLengthTextField *)[self viewWithTag:(currentIndex - 1)%self.numberOfInputBox];
-  [previousTextField becomeFirstResponder];
-}
-
-- (void)didInsertToFullTextField:(FixedLengthTextField *)textField {
-  [self moveNextOfTextField:textField];
-}
-
-- (void)didTapReturnKey:(FixedLengthTextField *)textField {
-  [self moveNextOfTextField:textField];
-}
-
-- (void)textLimitReachedForTextField:(FixedLengthTextField *)textField {
-  [self moveNextOfTextField:textField];
-}
-
-- (void)moveNextOfTextField:(UITextField *)textField {
-  NSInteger currentIndex = textField.tag;
-  if (currentIndex == self.numberOfInputBox) {
-    currentIndex = 0;
-  }else {
-    currentIndex ++;
-  }
-  FixedLengthTextField *nextTextField = (FixedLengthTextField *)[self viewWithTag:currentIndex];
-  [nextTextField becomeFirstResponder];
+  return textfield;
 }
 
 @end

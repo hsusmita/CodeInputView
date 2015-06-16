@@ -16,15 +16,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5o7-ex-FUg" customClass="CodeInputView">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5o7-ex-FUg">
                                 <rect key="frame" x="0.0" y="210" width="600" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8x-tn-qXc" userLabel="1" customClass="FixedLengthTextField">
+                                        <rect key="frame" x="20" y="10" width="125" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maximumCharacterLimit">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="065-V3-CTZ" userLabel="2" customClass="FixedLengthTextField">
+                                        <rect key="frame" x="165" y="10" width="125" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maximumCharacterLimit">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Leh-Vc-mlG" userLabel="3" customClass="FixedLengthTextField">
+                                        <rect key="frame" x="310" y="10" width="125" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maximumCharacterLimit">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WhY-5p-jsG" userLabel="4" customClass="FixedLengthTextField">
+                                        <rect key="frame" x="455" y="10" width="125" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maximumCharacterLimit">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="r8x-tn-qXc" firstAttribute="centerY" secondItem="065-V3-CTZ" secondAttribute="centerY" id="1SO-6e-LWb"/>
+                                    <constraint firstItem="r8x-tn-qXc" firstAttribute="top" secondItem="5o7-ex-FUg" secondAttribute="top" constant="10" id="3B3-54-81b"/>
+                                    <constraint firstItem="WhY-5p-jsG" firstAttribute="height" secondItem="r8x-tn-qXc" secondAttribute="height" id="4Do-an-dhG"/>
+                                    <constraint firstItem="WhY-5p-jsG" firstAttribute="centerY" secondItem="r8x-tn-qXc" secondAttribute="centerY" id="6Oe-VO-hO9"/>
+                                    <constraint firstItem="r8x-tn-qXc" firstAttribute="width" secondItem="065-V3-CTZ" secondAttribute="width" id="7K7-FG-Viy"/>
+                                    <constraint firstItem="065-V3-CTZ" firstAttribute="trailing" secondItem="Leh-Vc-mlG" secondAttribute="leading" constant="-20" id="BRP-Ci-UWB"/>
+                                    <constraint firstItem="r8x-tn-qXc" firstAttribute="width" secondItem="Leh-Vc-mlG" secondAttribute="width" id="DwJ-fl-L9O"/>
+                                    <constraint firstItem="r8x-tn-qXc" firstAttribute="height" secondItem="Leh-Vc-mlG" secondAttribute="height" id="FBD-GS-mrc"/>
                                     <constraint firstAttribute="height" constant="80" id="Gfu-jp-NjS"/>
+                                    <constraint firstItem="r8x-tn-qXc" firstAttribute="leading" secondItem="5o7-ex-FUg" secondAttribute="leading" constant="20" id="Hcv-TR-k7O"/>
+                                    <constraint firstItem="065-V3-CTZ" firstAttribute="leading" secondItem="r8x-tn-qXc" secondAttribute="trailing" constant="20" id="JMi-Dh-leW"/>
+                                    <constraint firstItem="r8x-tn-qXc" firstAttribute="centerY" secondItem="Leh-Vc-mlG" secondAttribute="centerY" id="Jmf-BK-kNL"/>
+                                    <constraint firstItem="r8x-tn-qXc" firstAttribute="height" secondItem="065-V3-CTZ" secondAttribute="height" id="Z30-gL-oOP"/>
+                                    <constraint firstItem="WhY-5p-jsG" firstAttribute="leading" secondItem="Leh-Vc-mlG" secondAttribute="trailing" constant="20" id="cWm-fd-7Ub"/>
+                                    <constraint firstAttribute="centerY" secondItem="r8x-tn-qXc" secondAttribute="centerY" id="oRk-8X-hua"/>
+                                    <constraint firstItem="WhY-5p-jsG" firstAttribute="width" secondItem="r8x-tn-qXc" secondAttribute="width" id="p3g-hO-n8Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="WhY-5p-jsG" secondAttribute="trailing" constant="20" id="trC-yL-Gtf"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMk-KC-uRR" customClass="CodeInputView">
+                                <rect key="frame" x="0.0" y="260" width="600" height="80"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="xEy-6E-77m"/>
+                                </constraints>
+                            </view>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="80" minimumValue="80" maximumValue="250" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="A8o-Ce-t0W">
+                                <rect key="frame" x="253" y="58" width="94" height="29"/>
+                                <connections>
+                                    <action selector="adjustConstraint:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ehY-7z-f2u"/>
+                                </connections>
+                            </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-yk-3TJ">
-                                <rect key="frame" x="289" y="45" width="46" height="30"/>
+                                <rect key="frame" x="277" y="20" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -32,28 +103,30 @@
                                     <action selector="updateHeight:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Sae-N0-7Rz"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="80" minimumValue="80" maximumValue="250" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="A8o-Ce-t0W">
-                                <rect key="frame" x="265" y="76" width="94" height="29"/>
-                                <connections>
-                                    <action selector="adjustConstraint:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ehY-7z-f2u"/>
-                                </connections>
-                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5o7-ex-FUg" secondAttribute="trailing" id="8up-dN-V5A"/>
                             <constraint firstAttribute="centerY" secondItem="5o7-ex-FUg" secondAttribute="centerY" constant="50" id="IGx-92-BxF"/>
+                            <constraint firstAttribute="trailing" secondItem="sMk-KC-uRR" secondAttribute="trailing" id="dFd-4q-fH4"/>
                             <constraint firstAttribute="centerX" secondItem="5o7-ex-FUg" secondAttribute="centerX" id="fcN-sQ-Tt6"/>
                             <constraint firstItem="5o7-ex-FUg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="llU-Bw-QzW"/>
+                            <constraint firstAttribute="centerY" secondItem="sMk-KC-uRR" secondAttribute="centerY" id="pkh-Dd-e8M"/>
+                            <constraint firstItem="sMk-KC-uRR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="qAl-xF-oOf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="codeInputView" destination="5o7-ex-FUg" id="ZTK-Bl-X9P"/>
-                        <outlet property="heightConstraint" destination="Gfu-jp-NjS" id="xGQ-gt-lb4"/>
+                        <outlet property="codeInputView" destination="sMk-KC-uRR" id="PGF-oM-DqJ"/>
+                        <outlet property="firstField" destination="r8x-tn-qXc" id="moL-VC-wWI"/>
+                        <outlet property="fourthField" destination="WhY-5p-jsG" id="4QQ-1K-5Xr"/>
+                        <outlet property="heightConstraint" destination="xEy-6E-77m" id="0nl-dC-bd7"/>
+                        <outlet property="secondField" destination="065-V3-CTZ" id="zOU-dQ-aX0"/>
+                        <outlet property="thirdField" destination="Leh-Vc-mlG" id="AfX-FY-PJS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="275" y="219"/>
         </scene>
     </scenes>
 </document>
